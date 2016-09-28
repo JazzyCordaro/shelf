@@ -34,12 +34,12 @@ app.listen(port, function(){
   console.log('I can hear you');
 });
 
+// use public
+app.use(express.static('public'));
+
 // base url
 app.get('/*', function(req, res){
  console.log('request params:',req.params);
  var file = req.params[0] || './views/index.html';
- res.sendFile(path.join(__dirname, '/public/', file));
+ res.sendFile(path.join(__dirname, '../public/', file));
 });
-
-// use public
-app.use(express.static('public'));
