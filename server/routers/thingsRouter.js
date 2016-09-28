@@ -13,7 +13,18 @@ var mongoose = require('mongoose');
 // require model
 var Thing = require('../models/things');
 
-// find thing
+// get route
 router.get('/', function(req, res){
-  
+  console.log('in get route');
+
+  // find thing
+  Thing.find({}, function(err, results){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log(results);
+      res.send(results);
+    }
+  }); // end find thing
 }); // end get
