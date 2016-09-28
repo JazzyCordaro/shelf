@@ -50,7 +50,7 @@ myApp.controller('shelfController',['$scope','$http',function($scope,$http){
 
     // $http({
     //   method:'POST',
-    //   url:'/addItem',
+    //   url:'/things',
     //   data:objectToSend
     //
     // }).then(function(){
@@ -61,7 +61,7 @@ myApp.controller('shelfController',['$scope','$http',function($scope,$http){
     console.log('in getItems',fakeItem);
     // $http({
     //   method:'GET',
-    //   url:'/getItems'
+    //   url:'/things'
     // }).then(function(data){
     //   $scope.toView = data.items;
     // });//end http callback function
