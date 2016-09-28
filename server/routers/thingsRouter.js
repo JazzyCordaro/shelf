@@ -28,3 +28,31 @@ router.get('/', function(req, res){
     }
   }); // end find thing
 }); // end get
+
+// post route
+router.post('/', function(req, res){
+  console.log('in post route');
+
+  var receivedThing = req.body;
+  console.log(receivedThing);
+
+  // create new Thing
+  var newThing = new Thing({
+    name: receivedThing.name,
+    description: receivedThing.description,
+    url: receivedThing.url,
+  }); // end new Thing
+
+  // save new Thing
+  newThing.save(function(err){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      console.log('thing shelved');
+      res.sendStatus(201);
+    }
+  }); // end save Thing
+}); // end post
+
+module.exports = router;
