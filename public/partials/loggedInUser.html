@@ -1,0 +1,21 @@
+<div>
+
+        <h2>user is logged in</h2>
+        <input type="text" name="name" value="" placeholder="Name" ng-model="userName">
+        <input type="text" name="name" value="" placeholder="Description" ng-model="description">
+        <input type="text" name="name" value="" placeholder="Image URL" ng-model="url">
+        <button type="button" name="button" ng-click="addThing()">Add an item to the shelf</button>
+        <div ng-repeat="x in toView">
+            <ul>
+                <li>{{x.name}}</li>
+                <li>{{x.description}}</li>
+                <img ng-src="{{x.photo}}" alt="" />
+            </ul>
+
+        </div>
+
+
+        <!-- <button ng-click="login()">Login</button> -->
+
+
+</div>

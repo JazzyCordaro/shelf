@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html ng-app = "myApp">
-  <head>
+<html ng-app="myApp">
+
+<head>
     <meta charset="utf-8">
     <script src="https://cdn.auth0.com/js/lock-8.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <script src="../vendors/angular.min.js" charset="utf-8"></script>
+    <script src="../vendors/angular-route.js" charset="utf-8"></script>
+    <script src="../vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="../scripts/client.js" charset="utf-8"></script>
+    <script src="../controllers/loggedInViewController.js" charset="utf-8"></script>
+    <script src="../controllers/homeController.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../style.css" media="screen" title="no title">
     <title>title</title>
-  </head>
-  <body ng-controller = "shelfController">
-  <h1>Shelf app</h1>
-  <div ng-show = "showUser">
-  <h2>user is logged in</h2>
-  <input type="text" name="name" value="" placeholder="Name" ng-model = "userName">
-  <input type="text" name="name" value="" placeholder="Description" ng-model = "description">
-  <input type="text" name="name" value="" placeholder="Image URL" ng-model = "url">
-  <button type="button" name="button" ng-click = "addItem()">Add an item to the shelf</button>
-  <div ng-repeat = "x in toView">
+</head>
+
+<body>
+  <div ng-controller="shelfController">
+    <h1>Shelf app</h1>
     <ul>
-      <li>{{x.name}}</li>
-      <li>{{x.description}}</li>
-      <img ng-src="{{x.photo}}" alt="" />
+      <li><a href="#home">Home</a></li>
+      <li><a href="#loggedInUser">Logged In</a></li>
     </ul>
-
   </div>
 
-  </div>
-  <div ng-hide = "showUser">
-    <h4>Log in to see stuff on the shelf</h4>
-    <button ng-click="login()">Login</button>
+  <main ng-view></main>
 
-  </div>
-  </body>
+
+</body>
+
+
 </html>
